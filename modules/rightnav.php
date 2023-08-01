@@ -1,0 +1,53 @@
+<div class="col-lg-3">
+    <div class="sidebar-widget category">
+        <h2 class="title">Category</h2>
+        <ul>
+            <?php 
+                $sqlSelectCat = "SELECT * FROM tbl_category";
+                $query = mysqli_query($conn,$sqlSelectCat) or die("Lỗi truy vấn");
+                $i=0;
+                foreach($query as $val):
+                    $i++;
+            ?>
+            <li><a href="index.php?page=products&cat=<?= $val["cat_id"] ?>"><?= $val["cat_name"] ?></a><span>(83)</span></li>
+            <?php 
+                endforeach
+            ?>
+        </ul>
+    </div>
+    
+    <div class="sidebar-widget image">
+        <h2 class="title">Featured Product</h2>
+        <a href="#">
+            <img src="img/category-1.jpg" alt="Image">
+        </a>
+    </div>
+    
+    <div class="sidebar-widget brands">
+        <h2 class="title">Our Brands</h2>
+        <ul>
+            <li><a href="#">Nulla </a><span>(45)</span></li>
+            <li><a href="#">Curabitur </a><span>(34)</span></li>
+            <li><a href="#">Nunc </a><span>(67)</span></li>
+            <li><a href="#">Ullamcorper</a><span>(74)</span></li>
+            <li><a href="#">Fusce </a><span>(89)</span></li>
+            <li><a href="#">Sagittis</a><span>(28)</span></li>
+        </ul>
+    </div>
+    
+    <div class="sidebar-widget tag">
+        <h2 class="title">Tags Cloud</h2>
+        <a href="#">Lorem ipsum</a>
+        <a href="#">Vivamus</a>
+        <a href="#">Phasellus</a>
+        <a href="#">pulvinar</a>
+        <a href="#">Curabitur</a>
+        <a href="#">Fusce</a>
+        <a href="#">Sem quis</a>
+        <a href="#">Mollis metus</a>
+        <a href="#">Sit amet</a>
+        <a href="#">Vel posuere</a>
+        <a href="#">orci luctus</a>
+        <a href="#">Nam lorem</a>
+    </div>
+</div>
